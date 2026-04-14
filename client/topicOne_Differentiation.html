@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width initial-scale=1.0">
+        <title>Differentiation</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    </head>
+    
+    <body>
+        <div class="container-fluid navbar text-center" id="first-division" role="navigation">
+            <div class="row division-row">
+                <div class="col"><a class="nav-button" href="about.html">About</a></div>
+                <div class="col"><a class="nav-button" href="help.html">Help</a></div>
+                <div class="col col-10"><a class="nav-button" href="index.html"><h2>Calculus Club</h2></a></div>
+                <div class="col"><a class="nav-button" href="register.html">Register</a></div>
+                <div class="col"><a class="nav-button" href="login.html">Login</a></div>
+            </div>
+        </div>
+
+        <div class="container-fluid navbar text-center" id="second-division" role="navigation">
+            <div class="row division-row">
+                <div class="topic-box col">
+                    <a class="nav-button" href="topicOne_Differentiation.html" class="topic-name" id="topic-one">Differentiation</a>
+                </div>
+
+                <div class="topic-box col">
+                    <a class="nav-button" href="topicTwo_MultivariateFunctions.html" class="topic-name" id="topic-two">Multivariate Functions</a>
+                </div>
+
+                <div class="topic-box col">
+                    <a class="nav-button" href="topicThree_MultivariateExtrema.html" class="topic-name" id="topic-three"> Multivariate Extrema</a>
+                </div>
+                
+                <div class="topic-box col">
+                    <a class="nav-button" href="topicFour_VectorValuedFunctions.html" class="topic-name" id="topic-four">Vector-valued Functions</a>
+                </div>
+
+                <div class="topic-box col">
+                    <a class="nav-button" href="topicFive_Exponentials.html" class="topic-name" id="topic-five">Exp. (e), Logs, and Hyperbolic Functions</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid" id="third-division">
+            <div class="row">
+                <div class="col-3 side-bar"></div>
+
+                <div class="col-6 content-box">
+                    <h2 class="text-center">Differentiation</h2>
+
+                    <div class="container-fluid" id="subtopics-main-box">
+                        <div class="row" id="subtopics-1">
+                            <h5>The Derivative</h5>
+                            <p class="subtopic-info">The first derivative is often referred to as the gradient, or "the slope", of a line</p>
+                        </div>
+                        <div class="row" id="subtopics-2">
+                            <h5>The Gradient</h5>
+                            <p class="subtopic-info">At a point
+                                <math>
+                                    <msub>
+                                        <mi>x</mi>
+                                        <mn>0</mn>
+                                    </msub>
+                                </math>
+                                ,it can be approximated by:
+                            </p>
+                            <p>
+                                <math display="block">
+                                    <mfrac>
+                                        <mrow>
+                                            <mi>f</mi>(
+                                            <mi>x</mi>)
+                                            <mo>-</mo>
+                                            <mi>f</mi>(
+                                            <msub>
+                                                <mi>x</mi>
+                                                <mn>0</mn>
+                                            </msub>)
+                                            
+                                        </mrow>
+                                        <mrow>
+                                            <mi>x</mi>
+                                            <mo>-</mo>
+                                            <msub>
+                                                <mi>x</mi>
+                                                <mn>0</mn>
+                                            </msub>
+                                        </mrow>
+                                    </mfrac>
+                                </math>
+                                This is more commonly used as the limit of a variable h (the distance from the point) as it approaches <math><mn>0</mn></math>:
+
+                                <math display="block">
+                                <munder>
+                                    <mrow>lim</mrow>
+                                    <mrow>
+                                        <mi>h</mi>
+                                        <mo>→</mo>
+                                        <mn>0</mn>
+                                    </mrow>
+                                </munder>
+                                    <mfrac>
+                                        <mrow>
+                                            <mi>f</mi>(
+                                            <mi>x</mi>
+                                            <mo>+</mo>
+                                            <mi>h</mi>)
+                                            <mo>-</mo>
+                                            <mi>f</mi>(
+                                            <mi>x</mi>)
+                                        </mrow>
+                                        <mrow>
+                                            <mi>h</mi>
+                                        </mrow>
+                                    </mfrac>
+                                </math>
+                            </p>
+                        </div>
+
+                        <div class="row" id="subtopics-3">
+                            <h5>Notation</h5>
+                            <p class="subtopic-info">
+                                The symbols used for the derivative include:
+                                <math display="block">
+                                    <mi>f</mi>
+                                    <mi>'</mi>(
+                                    <mi>x</mi>)
+                                </math>
+                                and
+                                <math display="block">
+                                    <mfrac>
+                                        <mrow>
+                                            <mi>d</mi>
+                                            <mi>f</mi>
+                                        </mrow>
+                                        <mrow>
+                                            <mi>d</mi>
+                                            <mi>x</mi>
+                                        </mrow>
+                                    </mfrac>
+                                </math>
+                            </p>
+                        </div>
+
+                        <div class="row" id="subtopics-4">
+                            <h5>Basic Derivatives</h5>
+                            <p class="subtopic-info">
+                                Below are some basic derivatives which underpin differentiation.
+                            </p>
+                            <p>
+                                <math>
+                                    <mtext>If</mtext>
+                                    <mi>f</mi>(
+                                    <mi>x</mi>)
+                                    <mo>=</mo>
+                                    <mi>c</mi>
+                                </math>
+                                for some constant
+                                <math>
+                                    <mi>c</mi>
+                                </math>
+                                ,then
+                                <math>
+                                    <mi>f</mi>
+                                    <mi>'</mi>(
+                                    <mi>x</mi>)
+                                    <mo>=</mo>
+                                    <mi>c</mi>
+                                </math>
+                                <math>
+                                    <mi>&#x2200</mi>
+                                    <mi>x</mi>
+                                </math>
+                            </p>
+                            <p>
+                                If
+                                <math>
+                                    <mi>f</mi>(
+                                    <mi>x</mi>)
+                                    <mo>=</mo>
+                                    <mi>x</mi>
+                                </math>
+                                ,then
+                                <math>
+                                    <mi>f</mi>
+                                    <mi>'</mi>(
+                                    <mi>x</mi>)
+                                    <mo>=</mo>
+                                    <mn>1</mn>
+                                </math>
+                                .
+                            </p>
+                            <p>If
+                                <math>
+                                    <mi>f</mi>(
+                                    <mi>x</mi>)
+                                    <mo>=</mo>
+                                    <msup>
+                                        <mi>x</mi>
+                                        <mi>n</mi>
+                                    </msup>
+                                </math>
+                                ,then
+                                <math>
+                                    <mi>f</mi>
+                                    <mi>'</mi>(
+                                    <mi>x</mi>)
+                                    <mo>=</mo>
+                                    <mi>n</mi>
+                                    <msup>
+                                        <mi>x</mi>
+                                        <mi>
+                                            <mi>n</mi>
+                                            <mo>-</mo>
+                                            <mo>1</mo>
+                                        </mi>
+                                    </msup>
+                                    
+                                </math>
+                            </p>
+                            <p>If
+                                <math>
+                                    <mi>f</mi>(
+                                    <mi>x</mi>)
+                                    <mo>=</mo>
+                                    <mi>sin</mi>(
+                                    <mi>k</mi>
+                                    <mi>x</mi>)
+                                </math>
+                                ,then
+                                <math>
+                                    <mi>f</mi>
+                                    <mi>'</mi>(
+                                    <mi>x</mi>)
+                                    <mo>=</mo>
+                                    <mi>k</mi>
+                                    <mi>cos</mi>(
+                                    <mi>k</mi>
+                                    <mi>x</mi>)
+                                </math>
+                            </p>
+                            <p>If
+                                <math>
+                                    <mi>f</mi>(
+                                    <mi>x</mi>)
+                                    <mo>=</mo>
+                                    <mi>cos</mi>(
+                                    <mi>k</mi>
+                                    <mi>x</mi>)
+                                </math>
+                                ,then
+                                <math>
+                                    <mi>f</mi>
+                                    <mi>'</mi>(
+                                    <mi>x</mi>)
+                                    <mo>=</mo>
+                                    <mo>-</mo>
+                                    <mi>k</mi>
+                                    <mi>sin</mi>(
+                                    <mi>k</mi>
+                                    <mi>x</mi>)
+                                </math>
+                            </p>
+                            <p>If
+                                <math>
+                                    <mi>f</mi>(
+                                    <mi>x</mi>)
+                                    <mo>=</mo>
+                                    <mi>g</mi>(
+                                    <mi>x</mi>)
+                                    <mo>+</mo>
+                                    <mi>h</mi>(
+                                    <mi>x</mi>)
+                                </math>
+                                ,then
+                                <math>
+                                    <mi>f</mi>
+                                    <mi>'</mi>(
+                                    <mi>x</mi>)
+                                    <mo>=</mo>
+                                    <mi>g</mi>
+                                    <mi>'</mi>(
+                                    <mi>x</mi>)
+                                    <mo>+</mo>
+                                    <mi>h</mi>
+                                    <mi>'</mi>(
+                                    <mi>x</mi>)
+                                </math>
+                            </p>
+                        </div>
+
+                        <div class="row" id="subtopics-5">
+                            <h5>Nice Functions</h5>
+                            <p class="subtopic-info">
+                                These are functions which are continuous 
+                                <math>
+                                    <mi>&#x2200</mi>
+                                    <mi>x</mi>
+                                </math>
+                                so their first derivative can be calculated for all <math><mi>x</mi></math>.
+                            </p>
+                        </div>
+
+                        <div class="row" id="subtopics-2">
+                            <h5>Not so Nice Function</h5>
+                            <p class="subtopic-info">
+                                An example of this would be
+                                <math>
+                                    <mi>f</mi>(
+                                    <mi>x</mi>)
+                                    <mo>=</mo>
+                                    <mi>tan</mi>(
+                                    <mi>x</mi>)
+                                </math>
+                            </p>
+                            <image src="../static/differentiation/tangent-graph.png"></image>
+                            <p>The function cannot be evaluated at certain points, namely
+                                <math>
+                                    <mi>x</mi>
+                                    <mo>=</mo>
+                                    <mfrac>
+                                        <mrow>
+                                            <mi>k</mi>
+                                            <mi>&#x03C0</mi>
+                                        </mrow>
+                                        <mrow>2</mrow>
+                                    </mfrac>
+                                </math>
+                                for
+                                <math>
+                                    <mi>k</mi>
+                                    <mi>&#x2208</mi>
+                                    <mi>&#x2115</mi>
+                                </math>
+                                as it tends to infinity when approaching from either side. Thus, its derivative cannot be calculate at those points and the function is not nice.
+                            </p>
+                        </div>
+
+                        <div class="row" id="subtopics-2">
+                            <h5>Continuity</h5>
+                            <p class="subtopic-info">
+                                For a function <math><mi>f</mi></math> to be continuous at a point <math><mi>x</mi><mo>=</mo><mi>a</mi></math>, then
+                                <math display="block">
+                                    <munder>
+                                        <mrow>lim</mrow>
+                                        <mrow>
+                                            <mi>h</mi>
+                                            <mo>→</mo>
+                                            <msup>
+                                                <mrow>a</mrow>
+                                                <mrow>+</mrow>
+                                            </msup>
+                                        </mrow>
+                                    </munder>
+                                    <mi>f</mi>(
+                                    <mi>x</mi>
+                                    )
+                                    <mo>=</mo>
+                                    <munder>
+                                        <mrow>lim</mrow>
+                                        <mrow>
+                                            <mi>h</mi>
+                                            <mo>→</mo>
+                                            <msup>
+                                                <mrow>a</mrow>
+                                                <mrow>-</mrow>
+                                            </msup>
+                                        </mrow>
+                                    </munder>
+                                    <mi>f</mi>(
+                                    <mi>x</mi>
+                                    )
+                                    <mo>=</mo>
+                                    <mi>L</mi>
+                                </math>
+                                and
+                                <math display="block">
+                                    <mi>f</mi>(
+                                        <mi>x</mi>
+                                    )
+                                    <mo>=</mo>
+                                    <mi>L</mi>
+                                </math>
+                                for some constant L.
+                            </p>
+                        </div>
+
+                        <div class="row" id="subtopics-2">
+                            <h5>General Rules</h5>
+                            <p class="subtopic-info">
+                                Below are some rules used for differentiation, where
+                                <math>
+                                    <mi>f</mi>(
+                                    <mi>x</mi>
+                                    )
+                                </math>
+                                and
+                                <math>
+                                    <mi>g</mi>(
+                                    <mi>x</mi>
+                                    )
+                                </math>
+                                are differentiable at
+                                <math>
+                                    <msub>
+                                        <mi>x</mi>
+                                        <mn>0</mn>
+                                    </msub>
+                                </math>.
+                            </p>
+                        </div>
+
+                        <div class="row" id="subtopics-2">
+                            <h5>Product Rule</h5>
+                            <p class="subtopic-info">
+                                <math>
+                                    <mfrac>
+                                        <mrow>d</mrow>
+                                        <mrow>
+                                            <mi>d</mi>
+                                            <mi>x</mi>
+                                        </mrow>
+                                    </mfrac>(
+                                        <mi>f</mi>(
+                                        <mi>x</mi>)   
+                                        <mi>g</mi>(
+                                        <mi>x</mi>)
+                                    )
+                                    <mo>=</mo>
+                                    <mi>f</mi>
+                                    <mi>'</mi>(
+                                    <mi>x</mi>)
+                                    <mi>g</mi>(
+                                    <mi>x</mi>)
+                                    <mo>+</mo>
+                                    <mi>f</mi>(
+                                    <mi>x</mi>)
+                                    <mi>g</mi>
+                                    <mi>'</mi>(
+                                    <mi>x</mi>)
+                                </math>
+                            </p>
+                        </div>
+
+                        <div class="row" id="subtopics-2">
+                            <h5>Quotient Rule</h5>
+                            <p class="subtopic-info">
+                                <math>
+                                    <mfrac>
+                                        <mrow>d</mrow>
+                                        <mrow>
+                                            <mi>d</mi>
+                                            <mi>x</mi>
+                                        </mrow>
+                                    </mfrac>(
+                                        <mfrac>
+                                            <mrow>
+                                                <mi>f</mi>(
+                                                <mi>x</mi>)
+                                            </mrow>
+                                            <mrow>
+                                                <mi>g</mi>(
+                                                <mi>x</mi>)
+                                            </mrow>
+                                        </mfrac>
+                                    )
+                                    <mo>=</mo>
+                                    <mfrac>
+                                        <mrow>
+                                            <mi>f</mi>
+                                            <mi>'</mi>(
+                                            <mi>x</mi>)
+                                            <mi>g</mi>(
+                                            <mi>x</mi>)
+                                            <mo>-</mo>
+                                            <mi>f</mi>(
+                                            <mi>x</mi>)
+                                            <mi>g</mi>
+                                            <mi>'</mi>(
+                                            <mi>x</mi>)
+                                        </mrow>
+                                        <mrow>
+                                            <msup>
+                                                <mi>
+                                                    <mi>g</mi>(
+                                                    <mi>x</mi>)
+                                                </mi>
+                                                <mn>2</mn>
+                                            </msup>
+                                        </mrow>
+                                    </mfrac>
+                                    
+                                </math>
+                            </p>
+                        </div>
+
+                        <div class="row" id="subtopics-2">
+                            <h5>Chain Rule</h5>
+                            <p class="subtopic-info">
+                                <math>
+                                    <mi>f</mi>
+                                    <mi>'</mi>(
+                                    <mi>x</mi>)
+                                    <mo>=</mo>
+                                    <mi>g</mi>
+                                    <mi>'</mi>(
+                                    <mi>x</mi>)
+                                    <mo>+</mo>
+                                    <mi>h</mi>
+                                    <mi>'</mi>(
+                                    <mi>x</mi>)
+                                </math>
+                            </p>
+                        </div>
+
+                        <div class="row" id="subtopics-2">
+                            <h5>Extrema</h5>
+                            <p class="subtopic-info">
+                                These are points where a function reaches a flat point.
+                            </p>
+                            <p>The two types of extrema are minima and maxima. Minima are low points and maxima are high points</p>
+                            <image src="../static/differentiation/sin-graph.png"></image>
+                            <p>The graph above is of the function <math><mi>sin</mi>(<mi>x</mi>)</math>. It reaches a maximum for any value of x which is a multiple of <math>
+                                <mfrac>
+                                    <mrow>
+                                        <mi>
+                                            <mi>(</mi>
+                                            <mn>1</mn>
+                                            <mo>+</mo>
+                                            <mn>2</mn>
+                                            <mi>k</mi>
+                                            <mi>)</mi>
+                                            <mi>&#x03C0</mi>
+                                        </mi>
+                                    </mrow>
+                                    <mrow>
+                                        2
+                                    </mrow>
+                                </mfrac>
+                            </math>.
+                            </p>
+                        </div>
+
+                        <div class="row" id="subtopics-2">
+                            <h5>Determining Extrema</h5>
+                            <p>Let 
+                                <math>
+                                    <mi>f</mi>(<mi>x</mi>)
+                                </math>
+                                be defined over
+                                <math>
+                                    <mi>[a,b]</mi>
+                                </math>.
+                            </p>
+                            <p>A point
+                                <math>
+                                    <msub>
+                                        <mi>x</mi>
+                                        <mn>0</mn>
+                                    </msub>
+                                <mi>&#x2208</mi>
+                                <mi>[a,b]</mi>
+                                </math>
+                                is:
+                                <ul>
+                                    <li>
+                                        An absolute maximum if
+                                        <math>
+                                            <mi>f</mi>(
+                                            <msub>
+                                                <mi>x</mi>
+                                                <mn>0</mn>
+                                            </msub>)
+                                            <mi>&#x2265</mi>
+                                            <mi>f</mi>(
+                                            <mi>x</mi>)
+                                        </math>
+                                        <math>
+                                            <mi>&#x2200</mi>
+                                            <mi>x</mi>
+                                            <mi>&#x2208</mi>
+                                            <mi>[a,b]</mi>
+                                        </math>
+                                    </li>
+                                    <li>
+                                        An absolute minimum if
+                                        <math>
+                                            <mi>f</mi>(
+                                            <msub>
+                                                <mi>x</mi>
+                                                <mn>0</mn>
+                                            </msub>)
+                                            <mi>&#x2264</mi>
+                                            <mi>f</mi>(
+                                            <mi>x</mi>)
+                                        </math>
+                                        <math>
+                                            <mi>&#x2200</mi>
+                                            <mi>x</mi>
+                                            <mi>&#x2208</mi>
+                                            <mi>[a,b]</mi>
+                                        </math>
+                                    </li>
+                                    <li>
+                                        An local maximum if
+                                        <math>
+                                            <mi>&#x2203</mi>
+                                            <mi>k>0</mi>
+                                        </math>,
+                                        <math>
+                                            <mi>f</mi>(
+                                            <msub>
+                                                <mi>x</mi>
+                                                <mn>0</mn>
+                                            </msub>)
+                                            <mi>&#x2265</mi>
+                                            <mi>f</mi>(
+                                            <mi>x+h</mi>)
+                                        </math>
+                                        <math>
+                                            <mi>&#x2200</mi>
+                                            <mi>&#x007C</mi>
+                                            <mi>h</mi>
+                                            <mi>&#x007C &#x003C k</mi>
+                                        </math>
+                                    </li>
+                                    <li>
+                                        An local minimum if
+                                        <math>
+                                            <mi>&#x2203</mi>
+                                            <mi>k>0</mi>
+                                        </math>,
+                                        <math>
+                                            <mi>f</mi>(
+                                            <msub>
+                                                <mi>x</mi>
+                                                <mn>0</mn>
+                                            </msub>)
+                                            <mi>&#x2264</mi>
+                                            <mi>f</mi>(
+                                            <mi>x+h</mi>)
+                                        </math>
+                                        <math>
+                                            <mi>&#x2200</mi>
+                                            <mi>&#x007C</mi>
+                                            <mi>h</mi>
+                                            <mi>&#x007C &#x003C k</mi>
+                                        </math>
+                                    </li>
+                                    
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3 side-bar"></div>
+            </div>
+        </div>
+
+        <div class="container-fluid text-center" id="third-division">
+            <div class="row">
+                <div class="col-3 side-bar"></div>
+
+                <div class="col-6 content-box">
+                    <div class="info-block" id="info-block-one"></div>
+                </div>
+
+                <div class="col-3 side-bar"></div>
+            </div>
+        </div>
+
+        <div id="bottom-page-space"></div>
+
+    </body>
+</html>
