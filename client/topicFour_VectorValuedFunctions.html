@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width initial-scale=1.0">
+        <title>Vector-valued Functions</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    </head>
+    
+    <body>
+        <div class="container-fluid navbar text-center" id="first-division" role="navigation">
+            <div class="row division-row">
+                <div class="col"><a class="nav-button" href="about.html">About</a></div>
+                <div class="col"><a class="nav-button" href="help.html">Help</a></div>
+                <div class="col col-10"><a class="nav-button" href="index.html"><h2>Calculus Club</h2></a></div>
+                <div class="col"><a class="nav-button" href="register.html">Register</a></div>
+                <div class="col"><a class="nav-button" href="login.html">Login</a></div>
+            </div>
+        </div>
+
+        <div class="container-fluid navbar text-center" id="second-division" role="navigation">
+            <div class="row division-row">
+                <div class="topic-box col">
+                    <a class="nav-button" href="topicOne_Differentiation.html" class="topic-name" id="topic-one">Differentiation</a>
+                </div>
+
+                <div class="topic-box col">
+                    <a class="nav-button" href="topicTwo_MultivariateFunctions.html" class="topic-name" id="topic-two">Multivariate Functions</a>
+                </div>
+
+                <div class="topic-box col">
+                    <a class="nav-button" href="topicThree_MultivariateExtrema.html" class="topic-name" id="topic-three"> Multivariate Extrema</a>
+                </div>
+                
+                <div class="topic-box col">
+                    <a class="nav-button" href="topicFour_VectorValuedFunctions.html" class="topic-name" id="topic-four">Vector-valued Functions</a>
+                </div>
+
+                <div class="topic-box col">
+                    <a class="nav-button" href="topicFive_Exponentials.html" class="topic-name" id="topic-five">Exp. (e), Logs, and Hyperbolic Functions</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid" id="third-division">
+            <div class="row">
+                <div class="col-3 side-bar"></div>
+
+                <div class="col-6 content-box">
+                    <h2 class="text-center">Vector-valued Functions</h2>
+
+                    <div>
+                        <h5>Jacobian Matrix</h5>
+                        <p>The Jacobian matrix is the matrix of partial derivatives. Given a function
+                            <math>
+                                <mi mathvariant="bold">f</mi>
+                                <mo>=</mo>(
+                                <msub>
+                                    <mi>f</mi>
+                                    <mn>1</mn>
+                                </msub>(
+                                <mi mathvariant="bold">x</mi>),
+                                (
+                                <msub>
+                                    <mi>f</mi>
+                                    <mn>2</mn>
+                                </msub>(
+                                <mi mathvariant="bold">x</mi>),
+                                ...,
+                                (
+                                <msub>
+                                    <mi>f</mi>
+                                    <mn>m</mn>
+                                </msub>(
+                                <mi mathvariant="bold">x</mi>))
+                            </math>,
+                            the Jacobian matrix would be
+                            <math display="block">
+                                <mi mathvariant="bold">J</mi>
+                                <mo>=</mo>
+                                <mrow>
+                                    <mo>(</mo>
+                                    <mtable>
+                                        <mtr>
+                                            <mtd>
+                                                <mfrac>
+                                                    <mrow>
+                                                        <mi>&#x2202</mi>
+                                                        <msub>
+                                                            <mi>f</mi>
+                                                            <mn>1</mn>
+                                                        </msub>
+                                                    </mrow>
+                                                    <mrow>
+                                                        <mi>&#x2202</mi>
+                                                        <msub>
+                                                            <mi>x</mi>
+                                                            <mn>1</mn>
+                                                        </msub>
+                                                    </mrow>
+                                                </mfrac>
+                                            </mtd>
+                                            <mtd>...</mtd>
+                                            <mtd>
+                                                <mfrac>
+                                                    <mrow>
+                                                        <mi>&#x2202</mi>
+                                                        <msub>
+                                                            <mi>f</mi>
+                                                            <mn>1</mn>
+                                                        </msub>
+                                                    </mrow>
+                                                    <mrow>
+                                                        <mi>&#x2202</mi>
+                                                        <msub>
+                                                            <mi>x</mi>
+                                                            <mi>n</mi>
+                                                        </msub>
+                                                    </mrow>
+                                                </mfrac>
+                                            </mtd>
+                                        </mtr>
+                                        <mtr>
+                                            <mtd>...</mtd>
+                                            <mtd>&#x22F1</mtd>
+                                            <mtd>...</mtd>
+                                        </mtr>
+                                        <mtr>
+                                            <mtd>
+                                                <mfrac>
+                                                    <mrow>
+                                                        <mi>&#x2202</mi>
+                                                        <msub>
+                                                            <mi>f</mi>
+                                                            <mi>m</mi>
+                                                        </msub>
+                                                    </mrow>
+                                                    <mrow>
+                                                        <mi>&#x2202</mi>
+                                                        <msub>
+                                                            <mi>x</mi>
+                                                            <mi>n</mi>
+                                                        </msub>
+                                                    </mrow>
+                                                </mfrac>
+                                            </mtd>
+                                            <mtd>...</mtd>
+                                            <mtd>
+                                                <mfrac>
+                                                    <mrow>
+                                                        <mi>&#x2202</mi>
+                                                        <msub>
+                                                            <mi>f</mi>
+                                                            <mi>m</mi>
+                                                        </msub>
+                                                    </mrow>
+                                                    <mrow>
+                                                        <mi>&#x2202</mi>
+                                                        <msub>
+                                                            <mi>x</mi>
+                                                            <mi>n</mi>
+                                                        </msub>
+                                                    </mrow>
+                                                </mfrac>
+                                            </mtd>
+                                        </mtr>
+                                    </mtable>
+                                    <mo>)</mo>
+                                </mrow>
+                            </math>
+                        </p>
+                    </div>
+
+                    <div>
+                        <h5>Alternative Notation</h5>
+                        <p>The Jacobian matrix may be denoted with several different symbols. Some are listed below:</p>
+                        <ul>
+                            <li>
+                                <math>
+                                    <mi mathvariant="bold">J</mi>
+                                </math>
+                            </li>
+                            <li>
+                                <math>
+                                    <msub>
+                                        <mi mathvariant="bold">J</mi>
+                                        <mi mathvariant="bold">f</mi>
+                                    </msub>
+                                </math>
+                            </li>
+                            <li>
+                                <math>
+                                    <mi>D</mi>
+                                    <mi mathvariant="bold">f</mi>
+                                </math>
+                            </li>
+                            <li>
+                                <math>
+                                    <mi>&#x2207</mi>
+                                    <mi mathvariant="bold">f</mi>
+                                </math>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5>Linear Approximations</h5>
+                        <p>For a multivariate function (
+                            <math>
+                                <msup>
+                                    <mi>&#x211D</mi>
+                                    <mi mathvariant="bold">n</mi>
+                                </msup>
+                                <mo>→</mo>
+                                <msup>
+                                    <mi>&#x211D</mi>
+                                    <mi mathvariant="bold">m</mi>
+                                </msup>
+                            </math>)
+                            the Jacobian matrix gives the best linear approximnation to 
+                            <math>
+                                <mi mathvariant="bold">f</mi>
+                            </math>
+                            at
+                            <math>
+                                <mi mathvariant="bold">x</mi>
+                            </math>:
+                            <math display="block">
+                                <mi mathvariant="bold">f</mi>(
+                                <mi mathvariant="bold">x</mi>
+                                <mo>+</mo>
+                                <mi>h</mi>
+                                <mi mathvariant="bold">v</mi>)
+                                <mo>&#x2248</mo>
+                                <mi mathvariant="bold">f</mi>(
+                                <mi mathvariant="bold">x</mi>)
+                                <mo>+</mo>
+                                <msub>
+                                    <mi mathvariant="bold">J</mi>
+                                    <mi mathvariant="bold">f</mi>
+                                </msub>(
+                                <mi mathvariant="bold">x</mi>)(
+                                <mi>h</mi>
+                                <mi mathvariant="bold"> v</mi>)
+                            </math>
+                        </p>
+                        <p>
+                            Note:
+                            <ul>
+                                <li>
+                                    <math>
+                                        <mi mathvariant="bold">x</mi>,
+                                        <mi mathvariant="bold">v</mi>,
+                                        <mi>h</mi>
+                                        <mi mathvariant="bold">v</mi>
+                                    </math>
+                                    are
+                                    <math>
+                                        <mi>n</mi>
+                                    </math>
+                                    -dimensional vectors
+                                </li>
+                                <li>
+                                    <math>
+                                        <msub>
+                                            <mi mathvariant="bold">J</mi>
+                                            <mi mathvariant="bold">f</mi>
+                                        </msub>(
+                                        <mi mathvariant="bold">x</mi>)
+                                    </math>
+                                    is an
+                                    <math>
+                                        <mi>m</mi>
+                                    </math>
+                                    by
+                                    <math>
+                                        <mi>n</mi>
+                                    </math>
+                                    matrix
+                                </li>
+                                <li>
+                                    <math>
+                                        <mi mathvariant="bold">f</mi>(
+                                        <mi mathvariant="bold">x</mi>),
+                                        <msub>
+                                            <mi mathvariant="bold">J</mi>
+                                            <mi mathvariant="bold">f</mi>
+                                        </msub>(
+                                        <mi mathvariant="bold">x</mi>)(
+                                        <mi>h</mi>
+                                        <mi mathvariant="bold"> v</mi>)
+                                    </math>
+                                    are
+                                    <math>
+                                        <mi>m</mi>
+                                    </math>
+                                    -dimensional vectors.
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-3 side-bar"></div>
+            </div>
+        </div>
+
+        <div class="container-fluid text-center" id="third-division">
+            <div class="row">
+                <div class="col-3 side-bar"></div>
+
+                <div class="col-6 content-box">
+                    <div class="info-block" id="info-block-one"></div>
+                </div>
+
+                <div class="col-3 side-bar"></div>
+            </div>
+        </div>
+
+        <div id="bottom-page-space"></div>
+
+    </body>
+</html>

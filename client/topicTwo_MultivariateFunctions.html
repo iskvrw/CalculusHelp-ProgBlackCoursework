@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width initial-scale=1.0">
+        <title>Multivariate Functions</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    </head>
+    
+    <body>
+        <div class="container-fluid navbar text-center" id="first-division" role="navigation">
+            <div class="row division-row">
+                <div class="col"><a class="nav-button" href="about.html">About</a></div>
+                <div class="col"><a class="nav-button" href="help.html">Help</a></div>
+                <div class="col col-10"><a class="nav-button" href="index.html"><h2>Calculus Club</h2></a></div>
+                <div class="col"><a class="nav-button" href="register.html">Register</a></div>
+                <div class="col"><a class="nav-button" href="login.html">Login</a></div>
+            </div>
+        </div>
+
+        <div class="container-fluid navbar text-center" id="second-division" role="navigation">
+            <div class="row division-row">
+                <div class="topic-box col">
+                    <a class="nav-button" href="topicOne_Differentiation.html" class="topic-name" id="topic-one">Differentiation</a>
+                </div>
+
+                <div class="topic-box col">
+                    <a class="nav-button" href="topicTwo_MultivariateFunctions.html" class="topic-name" id="topic-two">Multivariate Functions</a>
+                </div>
+
+                <div class="topic-box col">
+                    <a class="nav-button" href="topicThree_MultivariateExtrema.html" class="topic-name" id="topic-three"> Multivariate Extrema</a>
+                </div>
+                
+                <div class="topic-box col">
+                    <a class="nav-button" href="topicFour_VectorValuedFunctions.html" class="topic-name" id="topic-four">Vector-valued Functions</a>
+                </div>
+
+                <div class="topic-box col">
+                    <a class="nav-button" href="topicFive_Exponentials.html" class="topic-name" id="topic-five">Exp. (e), Logs, and Hyperbolic Functions</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid" id="third-division">
+            <div class="row">
+                <div class="col-3 side-bar"></div>
+
+                <div class="col-6 content-box">
+                    <h2 class="text-center">Multivariate Functions</h2>
+
+                    <div>
+                        <h5>Partial Derivatives</h5>
+                        <p>For a function with more  than one input, you must choose one of those inputs to differentiate with respect to, meaning that you can only "partially" differentiate for a multivariate function.</p>
+                        <p>For a function
+                            <math>
+                                <mi>f</mi>(
+                                <mi>x</mi>,
+                                <mi>y</mi>)
+                            </math>,
+                        The partial derivative with respect to x at a point 
+                        <math>
+                            (
+                                <msub>
+                                    <mi>x</mi>
+                                    <mn>0</mn>
+                                </msub>,
+                                <msub>
+                                    <mi>y</mi>
+                                    <mn>0</mn>
+                                </msub>
+                            )
+                        </math> is:
+                            <math display="block">
+                                <mfrac>
+                                    <mrow>
+                                        <mi>&#x2202</mi>
+                                        <mi>f</mi>
+                                    </mrow>
+                                    <mrow>
+                                        <mi>&#x2202</mi>
+                                        <mi>x</mi>
+                                    </mrow>
+                                </mfrac>
+                                (<msub>
+                                    <mi>x</mi>
+                                    <mn>0</mn>
+                                </msub>,
+                                <msub>
+                                    <mi>y</mi>
+                                    <mn>0</mn>
+                                </msub>)
+                                <mo>=</mo>
+                                <munder>
+                                    <mrow>lim</mrow>
+                                    <mrow>
+                                        <mi>x</mi>
+                                        <mo>→</mo>
+                                        <msub>
+                                            <mi>x</mi>
+                                            <mn>0</mn>
+                                        </msub>
+                                    </mrow>
+                                </munder>
+                                <mfrac>
+                                    <mrow>
+                                        <mi>f</mi>
+                                        (<mi>x</mi>,
+                                        <msub>
+                                            <mi>y</mi>
+                                            <mn>0</mn>
+                                        </msub>)
+                                        <mo>-</mo>
+                                        <mi>f</mi>
+                                        (<msub>
+                                            <mi>x</mi>
+                                            <mn>0</mn>
+                                        </msub>,
+                                        <msub>
+                                            <mi>y</mi>
+                                            <mn>0</mn>
+                                        </msub>)
+                                    </mrow>
+                                    <mrow>
+                                        <mi>x</mi>
+                                        <mo>-</mo>
+                                        <msub>
+                                            <mi>x</mi>
+                                            <mn>0</mn>
+                                        </msub>
+                                    </mrow>
+                                </mfrac>
+                            </math>
+                        </p>
+                    </div>
+
+                    <div>
+                        <h5>Example</h5>
+                        <p> Given 
+                            <math>
+                                <mi>f</mi>(
+                                <mi>x</mi>,
+                                <mi>y</mi>)
+                                <mo>=</mo>
+                                <mn>2</mn>
+                                <msup>
+                                    <mi>x</mi>
+                                    <mn>2</mn>
+                                </msup>
+                                <msup>
+                                    <mi>y</mi>
+                                    <mn>3</mn>
+                                </msup>
+                                <mo>-</mo>
+                                <mi>x</mi>
+                                <mi>y</mi>
+                                <mo>+</mo>
+                                <mn>2</mn>
+                                <mi>x</mi>
+                                <mo>-</mo>
+                                <mn>3</mn>
+                                <mi>y</mi>
+                                <mo>+</mo>
+                                <mn>5</mn>
+                            </math>,
+                            The partial derivative of <math><mi>f</mi></math> wrt to <math><mi>y</mi></math> is:
+                            <math display="block">
+                                <mfrac>
+                                    <mrow>
+                                        <mi>&#x2202</mi>
+                                        <mi>f</mi>
+                                    </mrow>
+                                    <mrow>
+                                        <mi>&#x2202</mi>
+                                        <mi>x</mi>
+                                    </mrow>
+                                </mfrac>
+                                <mo>=</mo>
+                                <mn>6</mn>
+                                <mi>x</mi>
+                                <msup>
+                                    <mi>y</mi>
+                                    <mi>2</mi>
+                                </msup>
+                                <mo>-</mo>
+                                <mi>x</mi>
+                                <mo>-</mo>
+                                <mn>3</mn>
+                            </math>
+                        </p>
+                    </div>
+
+                    <div>
+                        <h5>Alternative Notation</h5>
+                        <p>You may also see 
+                            <math>
+                                <msub>
+                                    <mi>f</mi>
+                                    <mi>x</mi>
+                                </msub>
+                            </math> used when referring to partial derivatives, such as
+                            <math>
+                                <mfrac>
+                                    <mrow>
+                                        <mi>&#x2202</mi>
+                                        <mi>f</mi>
+                                    </mrow>
+                                    <mrow>
+                                        <mi>&#x2202</mi>
+                                        <mi>x</mi>
+                                    </mrow>
+                                </mfrac>
+                            </math>.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h5>Directional Derivatives</h5>
+                        <p>Consider a point
+                            <math>
+                                <msub>
+                                    <mi mathvariant="bold">x</mi>
+                                    <mn mathvariant="bold">0</mn>
+                                </msub>
+                                <mo>=</mo>(
+                                    <msub>
+                                        <mi>x</mi>
+                                        <mn>0</mn>
+                                    </msub>,
+                                    <msub>
+                                        <mi>y</mi>
+                                        <mn>0</mn>
+                                    </msub>)
+                            </math>
+                            and a vector
+                            <math>
+                                <mi mathvariant="bold">v</mi>
+                                <mo>=</mo>
+                                <mrow>
+                                    <mo>(</mo>
+                                    <mtable>
+                                        <mtr>
+                                            <msub>
+                                                <mi>v</mi>
+                                                <mn>x</mn>
+                                            </msub>
+                                        </mtr>
+                                        <mtr>
+                                            <msub>
+                                                <mi>v</mi>
+                                                <mn>y</mn>
+                                            </msub>
+                                        </mtr>
+                                    </mtable>
+                                    <mo>)</mo>
+                                </mrow>
+                            </math>.
+                            Then, the directional derivative of <math><mi>f</mi></math> in direction <math><mi mathvariant="bold">v</mi></math> is:
+                            <math display="block">
+                                <msub>
+                                <mi>&#x2207</mi>
+                                <mi>v</mi>
+                                </msub>
+                                <mi>f</mi>
+                                <mo>=</mo>
+                                <mi mathvariant="bold">v</mi>
+                                <mo>.</mo>
+                                <mrow>
+                                <mo>(</mo>
+                                    <mtable>
+                                        <mtr>
+                                            <msub>
+                                                <mi>f</mi>
+                                                <mn>x</mn>
+                                            </msub>
+                                        </mtr>
+                                        <mtr>
+                                            <msub>
+                                                <mi>f</mi>
+                                                <mn>y</mn>
+                                            </msub>
+                                        </mtr>
+                                    </mtable>
+                                <mo>)</mo>
+                                </mrow>
+                            </math>
+                        </p>
+                        <p>
+                            The symbol
+                            <math>
+                                <mi>&#x2207</mi>
+                                <mi>f</mi>
+                            </math>
+                            is a vector pointing in the direction of greatest rate of increase of <math><mi>f</mi></math>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-3 side-bar"></div>
+            </div>
+        </div>
+
+        <div class="container-fluid text-center" id="third-division">
+            <div class="row">
+                <div class="col-3 side-bar"></div>
+
+                <div class="col-6 content-box">
+                    <div class="info-block" id="info-block-one"></div>
+                </div>
+
+                <div class="col-3 side-bar"></div>
+            </div>
+        </div>
+
+        <div id="bottom-page-space"></div>
+
+    </body>
+</html>
