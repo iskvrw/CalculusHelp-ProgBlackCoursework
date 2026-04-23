@@ -13,13 +13,21 @@ function Register() {
                 }
             });
             
-            email = response.email;
-            username = response.username;
-            first_name = response.first_name;
+            if (response.successful.valueOf() === true) {
+                email = response.email;
+                username = response.username;
+                first_name = response.first_name;
 
-            localStorage.setItem("email", email);
-            localStorage.setItem("username", username);
-            localStorage.setItem("first_name", first_name);
+                localStorage.setItem("email", email);
+                localStorage.setItem("username", username);
+                localStorage.setItem("first_name", first_name);
+            }
+            else {
+                throw Error(response.reason);
+            }
+            
+
+            
             
             /*
             SAVE USERNAME AND FIRST_NAME TO LOCALSTORAGE
@@ -30,9 +38,8 @@ function Register() {
 
 
         }
-        catch {
-            document.getElementById("error").innerHTML = "There already exists an account with this email. Please log in.";
-            Alert("There has been an error. Please try again.");
+        catch (error) {
+            document.getElementById("error").innerHTML = error;
         }
     }
 };
