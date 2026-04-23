@@ -32,11 +32,13 @@ app.post("/register_request", function(request, response) {
     const hashObject = new jsSHA("SHA-512", "TEXT", { encoding: "UTF8" });
     hashObject.update(password);
     const password_hashed = hashObject.getHash("HEX");
-
     const hash_table = require("./data.json");
-    const generate = require("child_process");
+
+
+    const spawn = require("child_process").spawn;
     const script_data = [email, password, username, first_name]
-    const registerProcess = generate.spawn('python3', ['./checkRegisterCredentials.py', script_data]);
+    const registerProcess = spawn('python3', ['./checkRegisterCredentials.py', script_data]);
+
     registerProcess.stdout.on("data", (data) => {
         console.log(data.toString());
         console.log('pussy tight hoe');
