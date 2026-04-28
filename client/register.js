@@ -1,42 +1,36 @@
-function Register() {
+async function Register() {
     if (document.getElementById("password-field-one").value === document.getElementById("password-field-two").value) {
         try {
             const form = document.querySelector('form');
             const registerData = new FormData(form);
             const urlEncodedParameters = new URLSearchParams(registerData).toString();
 
-            let response = fetch("http://127.0.0.1:8090/register_request", {
+            let response = await fetch("http://127.0.0.1:8090/register_request", {
                 method: "POST",
                 body: urlEncodedParameters,
                 headers: {
                     'Content-type': 'application/x-www-form-urlencoded'
                 }
             });
-            
-            if (response.successful.valueOf() === true) {
-                email = response.email;
-                username = response.username;
-                first_name = response.first_name;
+            try {
+                if (response.ok) {
+                    let data = await response.json();
+                    console.log(data);
 
-                localStorage.setItem("email", email);
-                localStorage.setItem("username", username);
-                localStorage.setItem("first_name", first_name);
+                    localStorage.setItem("email", data["email"]);
+                    localStorage.setItem("username", data["username"]);
+                    localStorage.setItem("first_name", data["first_name"]);
+                    
+                    window.location.replace("http://127.0.0.1:8090/index.html");
+                }
+                else {   
+                    throw(Error("Register request failed."));
+                }
             }
-            else {
-                throw Error(response.reason);
+            catch (error) {
+                throw(error);
             }
             
-
-            
-            
-            /*
-            SAVE USERNAME AND FIRST_NAME TO LOCALSTORAGE
-            Don't forget to add it upon LOGIN
-            and
-            Delete upon LOGOUT
-            */
-
-
         }
         catch (error) {
             document.getElementById("error").innerHTML = error;
@@ -44,11 +38,7 @@ function Register() {
     }
 };
 
-/*
-let registerSubmit = document.getElementById("registerSubmit");
-registerSubmit.addEventListener("click", Register);
-*/
-
+//const registerbutton = document.getElementById("registerSubmit");
 const form = document.querySelector('form');
 form.addEventListener('submit', (event) => {
     event.preventDefault();
