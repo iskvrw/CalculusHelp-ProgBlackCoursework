@@ -82,27 +82,30 @@
 .content-box {
     background-color: rgb(206, 229, 231);
 }
-/*
-.col {
-    border: 2px;
-    border-style: solid;
-    border-color: black;
-    
-}
-*/
-
-/* 
-body {
-    border: 5px;
-    border-style: solid;
-    border-color: green;
-    min-width: 100%;
-}
-*/
 
 .graph {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%
+}
+
+#comments-section {
+    border-color: black;
+    border-style: solid;
+    border-bottom: 1px;
+    border-left: 0;
+    border-right: 0;
+}
+
+#comment-input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%
+}
+
+#post-comment-button {
+    margin-left: 40%;
+    width:10%;
 }

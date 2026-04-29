@@ -38,7 +38,6 @@ async function Register() {
     }
 };
 
-//const registerbutton = document.getElementById("registerSubmit");
 const form = document.querySelector('form');
 form.addEventListener('submit', (event) => {
     event.preventDefault();

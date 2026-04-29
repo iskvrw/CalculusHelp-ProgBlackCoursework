@@ -8,6 +8,10 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         <script src="client.js" defer></script>
         <script src="logout.js" defer></script>
+        <script src="../postComment.js"></script>
+        <script src="../deleteComment.js"></script>
+        <script src="../editComment.js"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     </head>
     
     <body>
@@ -16,8 +20,8 @@
                 <div class="col"><a class="nav-button" href="about.html">About</a></div>
                 <div class="col"><a class="nav-button" href="help.html">Help</a></div>
                 <div class="col col-10"><a class="nav-button" href="index.html"><h2>Calculus Club</h2></a></div>
-                <div class="col"><a class="nav-button" href="register.html">Register</a></div>
-                <div class="col"><a class="nav-button" href="login.html">Login</a></div>
+                <div class="col"><a class="nav-button" href="register.html" id="register_button">Register</a></div>
+                <div class="col"><a class="nav-button" href="login.html" id="login_button">Login</a></div>
             </div>
         </div>
 
@@ -54,124 +58,8 @@
 
                     <div>
                         <h5>Jacobian Matrix</h5>
-                        <p>The Jacobian matrix is the matrix of partial derivatives. Given a function
-                            <math>
-                                <mi mathvariant="bold">f</mi>
-                                <mo>=</mo>(
-                                <msub>
-                                    <mi>f</mi>
-                                    <mn>1</mn>
-                                </msub>(
-                                <mi mathvariant="bold">x</mi>),
-                                (
-                                <msub>
-                                    <mi>f</mi>
-                                    <mn>2</mn>
-                                </msub>(
-                                <mi mathvariant="bold">x</mi>),
-                                ...,
-                                (
-                                <msub>
-                                    <mi>f</mi>
-                                    <mn>m</mn>
-                                </msub>(
-                                <mi mathvariant="bold">x</mi>))
-                            </math>,
-                            the Jacobian matrix would be
-                            <math display="block">
-                                <mi mathvariant="bold">J</mi>
-                                <mo>=</mo>
-                                <mrow>
-                                    <mo>(</mo>
-                                    <mtable>
-                                        <mtr>
-                                            <mtd>
-                                                <mfrac>
-                                                    <mrow>
-                                                        <mi>&#x2202</mi>
-                                                        <msub>
-                                                            <mi>f</mi>
-                                                            <mn>1</mn>
-                                                        </msub>
-                                                    </mrow>
-                                                    <mrow>
-                                                        <mi>&#x2202</mi>
-                                                        <msub>
-                                                            <mi>x</mi>
-                                                            <mn>1</mn>
-                                                        </msub>
-                                                    </mrow>
-                                                </mfrac>
-                                            </mtd>
-                                            <mtd>...</mtd>
-                                            <mtd>
-                                                <mfrac>
-                                                    <mrow>
-                                                        <mi>&#x2202</mi>
-                                                        <msub>
-                                                            <mi>f</mi>
-                                                            <mn>1</mn>
-                                                        </msub>
-                                                    </mrow>
-                                                    <mrow>
-                                                        <mi>&#x2202</mi>
-                                                        <msub>
-                                                            <mi>x</mi>
-                                                            <mi>n</mi>
-                                                        </msub>
-                                                    </mrow>
-                                                </mfrac>
-                                            </mtd>
-                                        </mtr>
-                                        <mtr>
-                                            <mtd>...</mtd>
-                                            <mtd>&#x22F1</mtd>
-                                            <mtd>...</mtd>
-                                        </mtr>
-                                        <mtr>
-                                            <mtd>
-                                                <mfrac>
-                                                    <mrow>
-                                                        <mi>&#x2202</mi>
-                                                        <msub>
-                                                            <mi>f</mi>
-                                                            <mi>m</mi>
-                                                        </msub>
-                                                    </mrow>
-                                                    <mrow>
-                                                        <mi>&#x2202</mi>
-                                                        <msub>
-                                                            <mi>x</mi>
-                                                            <mi>n</mi>
-                                                        </msub>
-                                                    </mrow>
-                                                </mfrac>
-                                            </mtd>
-                                            <mtd>...</mtd>
-                                            <mtd>
-                                                <mfrac>
-                                                    <mrow>
-                                                        <mi>&#x2202</mi>
-                                                        <msub>
-                                                            <mi>f</mi>
-                                                            <mi>m</mi>
-                                                        </msub>
-                                                    </mrow>
-                                                    <mrow>
-                                                        <mi>&#x2202</mi>
-                                                        <msub>
-                                                            <mi>x</mi>
-                                                            <mi>n</mi>
-                                                        </msub>
-                                                    </mrow>
-                                                </mfrac>
-                                            </mtd>
-                                        </mtr>
-                                    </mtable>
-                                    <mo>)</mo>
-                                </mrow>
-                            </math>
-                        </p>
+                        <p>The Jacobian matrix is the matrix of partial derivatives. Given a function \(\boldsymbol{f} = (f_1(\boldsymbol{x}), f_2(\boldsymbol{x}), ..., f_m(\boldsymbol{x})) \), the Jacobian matrix would be </p>
+                        <p class="text-center"><img  src="../static/j_matrix.png"></p>
                     </div>
 
                     <div>
@@ -220,85 +108,13 @@
                                     <mi mathvariant="bold">m</mi>
                                 </msup>
                             </math>)
-                            the Jacobian matrix gives the best linear approximnation to 
-                            <math>
-                                <mi mathvariant="bold">f</mi>
-                            </math>
-                            at
-                            <math>
-                                <mi mathvariant="bold">x</mi>
-                            </math>:
-                            <math display="block">
-                                <mi mathvariant="bold">f</mi>(
-                                <mi mathvariant="bold">x</mi>
-                                <mo>+</mo>
-                                <mi>h</mi>
-                                <mi mathvariant="bold">v</mi>)
-                                <mo>&#x2248</mo>
-                                <mi mathvariant="bold">f</mi>(
-                                <mi mathvariant="bold">x</mi>)
-                                <mo>+</mo>
-                                <msub>
-                                    <mi mathvariant="bold">J</mi>
-                                    <mi mathvariant="bold">f</mi>
-                                </msub>(
-                                <mi mathvariant="bold">x</mi>)(
-                                <mi>h</mi>
-                                <mi mathvariant="bold"> v</mi>)
-                            </math>
-                        </p>
-                        <p>
-                            Note:
+                            the Jacobian matrix gives the best linear approximnation to \(\boldsymbol{f} \) at \(\boldsymbol{x} \): </p>
+                        <p> \(\boldsymbol{f}(\boldsymbol{x} + h \boldsymbol{v}) \approx \boldsymbol{f}(\boldsymbol{x}) + \boldsymbol{J_f}(\boldsymbol{x})(h \boldsymbol{x}) \) </p>
+                        <p> Note: 
                             <ul>
-                                <li>
-                                    <math>
-                                        <mi mathvariant="bold">x</mi>,
-                                        <mi mathvariant="bold">v</mi>,
-                                        <mi>h</mi>
-                                        <mi mathvariant="bold">v</mi>
-                                    </math>
-                                    are
-                                    <math>
-                                        <mi>n</mi>
-                                    </math>
-                                    -dimensional vectors
-                                </li>
-                                <li>
-                                    <math>
-                                        <msub>
-                                            <mi mathvariant="bold">J</mi>
-                                            <mi mathvariant="bold">f</mi>
-                                        </msub>(
-                                        <mi mathvariant="bold">x</mi>)
-                                    </math>
-                                    is an
-                                    <math>
-                                        <mi>m</mi>
-                                    </math>
-                                    by
-                                    <math>
-                                        <mi>n</mi>
-                                    </math>
-                                    matrix
-                                </li>
-                                <li>
-                                    <math>
-                                        <mi mathvariant="bold">f</mi>(
-                                        <mi mathvariant="bold">x</mi>),
-                                        <msub>
-                                            <mi mathvariant="bold">J</mi>
-                                            <mi mathvariant="bold">f</mi>
-                                        </msub>(
-                                        <mi mathvariant="bold">x</mi>)(
-                                        <mi>h</mi>
-                                        <mi mathvariant="bold"> v</mi>)
-                                    </math>
-                                    are
-                                    <math>
-                                        <mi>m</mi>
-                                    </math>
-                                    -dimensional vectors.
-                                </li>
+                                <li> \(\boldsymbol{x}, \boldsymbol{v}, h \boldsymbol{v} \) are \(n\)-dimensional vectors</li>
+                                <li> \(\boldsymbol{J_f}(\boldsymbol{x}) \) is an \(m \times n \) matrix </li>
+                                <li> \(\boldsymbol{f}(\boldsymbol{x}), \boldsymbol{J_f}(\boldsymbol{x})(h \boldsymbol{x}) \) are \(m\)-dimensional vectors.</li>
                             </ul>
                         </p>
                     </div>

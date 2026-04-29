@@ -8,6 +8,10 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         <script src="client.js" defer></script>
         <script src="logout.js" defer></script>
+        <script src="../postComment.js"></script>
+        <script src="../deleteComment.js"></script>
+        <script src="../editComment.js"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     </head>
     
     <body>
@@ -16,8 +20,8 @@
                 <div class="col"><a class="nav-button" href="about.html">About</a></div>
                 <div class="col"><a class="nav-button" href="help.html">Help</a></div>
                 <div class="col col-10"><a class="nav-button" href="index.html"><h2>Calculus Club</h2></a></div>
-                <div class="col"><a class="nav-button" href="register.html">Register</a></div>
-                <div class="col"><a class="nav-button" href="login.html">Login</a></div>
+                <div class="col"><a class="nav-button" href="register.html" id="register_button">Register</a></div>
+                <div class="col"><a class="nav-button" href="login.html" id="login_button">Login</a></div>
             </div>
         </div>
 
@@ -58,28 +62,7 @@
                             <math>
                                 <mi>e</mi>
                             </math>
-                            is equal to the limit
-                            <math>
-                                <munder>
-                                    <mrow>lim</mrow>
-                                    <mrow>
-                                        <mi>h</mi>
-                                        <mo>→</mo>
-                                        <mn>&#x221E</mn>
-                                    </mrow>
-                                </munder>(
-                                <mn>1</mn>
-                                <mo>+</mo>
-                                <mfrac>
-                                    <mrow>
-                                        <mn>1</mn>
-                                    </mrow>
-                                    <mrow>
-                                        <mi>n</mi>
-                                    </mrow>
-                                </mfrac>)
-                            </math>
-                            .The limit forms an increasing sequence, remaining bounded above by 3, and consequently converges to a limit – that is <math><mi>e</mi></math>.
+                            is equal to the limit \(\lim_{h \to \infty} (1 + \frac{1}{n}) \).The limit forms an increasing sequence, remaining bounded above by 3, and consequently converges to a limit – that is <math><mi>e</mi></math>.
                         </p>
                         <p>
                             The number
@@ -94,80 +77,11 @@
                     </div>
                     <div>
                         <h5>Derivative of <math><msup><mi>e</mi><mi>x</mi></msup></math></h5>
-                        <p>
-                            <math display="block">
-                                <mfrac>
-                                    <mrow>d</mrow>
-                                    <mrow>
-                                        <mi>d</mi>
-                                        <mi>x</mi>
-                                    </mrow>
-                                </mfrac>(
-                                <msup>
-                                    <mi>e</mi>
-                                    <mi>x</mi>
-                                </msup>)
-                                <mo>=</mo>
-                                <munder>
-                                    <mrow>lim</mrow>
-                                    <mrow>
-                                        <mi>h</mi>
-                                        <mo>→</mo>
-                                        <mn>0</mn>
-                                    </mrow>
-                                </munder>
-                                    <mfrac>
-                                        <mrow>
-                                            <msup>
-                                                <mi>e</mi>
-                                                <mi>
-                                                    <mi>x</mi>
-                                                    <mo>+</mo>
-                                                    <mi>h</mi>
-                                                </mi>
-                                            </msup>
-                                            <mo>-</mo>
-                                            <msup>
-                                                <mi>e</mi>
-                                                <mi>x</mi>
-                                            </msup>
-                                        </mrow>
-                                        <mrow>
-                                            <mi>h</mi>
-                                        </mrow>
-                                    </mfrac>
-                                    <mo>=</mo>
-                                    <msup>
-                                        <mi>e</mi>
-                                        <mi>x</mi>
-                                    </msup>
-                            </math>
-                        </p>
+                        <p class="text-center"> \(\frac{d}{dx} (e^x) = e^x \) </p>
                     </div>
                     <div>
                         <h5>Natural Logarhithm</h5>
-                        <p>The natural logarithm(
-                                <math>
-                                    <mi>ln</mi>(
-                                    <mi>x</mi>)
-                                </math>
-                                or
-                                <math>
-                                    <msub>
-                                        <mi>log</mi>
-                                        <mi>e</mi>
-                                    </msub>(
-                                    <mi>x</mi>)
-                                </math>
-                            )
-                            is the inverse function of 
-                            <math>
-                                <msup>
-                                    <mi>e</mi>
-                                    <mi>x</mi>
-                                </msup>
-                            </math>
-                        </p>
+                        <p>The natural logarithm \(\ln{x} \) or \(\log_e{x} \) is the inverse function of \(e^x\)</p>
                         <image class="graph" src="../static/exponentials/natural-logarithm-graph.png"></image>
                     </div>
                     <div>
@@ -176,64 +90,9 @@
                     </div>
                     <div>
                         <h5>Derivative of the Natural Logarhithm</h5>
-                        <p>If 
-                            <math>
-                                <mi>y</mi>
-                                <mo>=</mo>
-                                <mi>ln</mi>(
-                                <mi>x</mi>)
-                            </math>,
-                            then
-                            <math>
-                                <msup>
-                                    <mi>e</mi>
-                                    <mi>x</mi>
-                                </msup>
-                                <mo>=</mo>
-                                <mi>x</mi>
-                            </math>.
-                            Differentiating using the chain rule:
-                            <math display="block">
-                                <mfrac>
-                                    <mrow>dy</mrow>
-                                    <mrow>
-                                        <mi>d</mi>
-                                        <mi>x</mi>
-                                    </mrow>
-                                </mfrac>
-                                <msup>
-                                    <mi>e</mi>
-                                    <mi>y</mi>
-                                </msup>
-                                <mo>=</mo>
-                                <mn>1</mn>
-                            </math>
-                            Rearranging the above gives
-                            <math display="block">
-                                <mfrac>
-                                    <mrow>dy</mrow>
-                                    <mrow>
-                                        <mi>d</mi>
-                                        <mi>x</mi>
-                                    </mrow>
-                                </mfrac>
-                                <mo>=</mo>
-                                <mfrac>
-                                    <mrow>1</mrow>
-                                    <mrow>
-                                        <msup>
-                                            <mi>e</mi>
-                                            <mi>y</mi>
-                                        </msup>
-                                    </mrow>
-                                </mfrac>
-                                <mo>=</mo>
-                                <mfrac>
-                                    <mrow>1</mrow>
-                                    <mrow>x</mrow>
-                                </mfrac>
-                            </math>
-                        </p>
+                        <p>If  \(y = \ln{x} \) ,then \(x=e^x \). Differentiating using the chain rule: </p>
+                        <p> \(\frac{dy}{dx} e^y  = 1\) </p>
+                        <p> Rearranging the above gives \(\frac{dy}{dx} = \frac{1}{e^y} = \frac{1}{x} \)</p>
                     </div>
 
                     <div>
@@ -252,58 +111,14 @@
                                 <mo>=</mo>
                                 <mn>1</mn>
                             </math>,
-                            the hyperbolic functions are defined by the coordinates of a point at which the area
-                            <math>
-                                <mfrac>
-                                    <mrow>&#x03B1</mrow>
-                                    <mrow>2</mrow>
-                                </mfrac>
-                            </math>
-                            has been swept out.
+                            the hyperbolic functions are defined by the coordinates of a point at which the area \(\alpha \) has been swept out.
                         </p>
                         <image class="graph" src="../static/exponentials/hyperbolic-graph.png"></image>
                         <p>
-                            The following formulae can be derived from it:
-                            <math display="block">
-                                <mi>sinh</mi>(
-                                <mi>&#x03B1</mi>)
-                                <mo>=</mo>
-                                <mfrac>
-                                    <mrow>
-                                        <msup>
-                                            <mi>e</mi>
-                                            <mi>&#x03B1</mi>
-                                        </msup>
-                                        <mo>-</mo>
-                                        <msup>
-                                            <mi>e</mi>
-                                            <mi>-&#x03B1</mi>
-                                        </msup>
-                                    </mrow>
-                                    <mrow>2</mrow>
-                                </mfrac>
-                            </math>
+                            The following formulae can be derived from it: </p>
+                        <p class="text-center">\(\sinh{\alpha} = \frac{e^{\alpha} - e^{- \alpha}}{2} \) </p>
                             and
-                            <math display="block">
-                                <mi>cosh</mi>(
-                                <mi>&#x03B1</mi>)
-                                <mo>=</mo>
-                                <mfrac>
-                                    <mrow>
-                                        <msup>
-                                            <mi>e</mi>
-                                            <mi>&#x03B1</mi>
-                                        </msup>
-                                        <mo>+</mo>
-                                        <msup>
-                                            <mi>e</mi>
-                                            <mi>-&#x03B1</mi>
-                                        </msup>
-                                    </mrow>
-                                    <mrow>2</mrow>
-                                </mfrac>
-                            </math>
-                        </p>
+                        <p class="text-center"> \(\cosh{\alpha} = \frac{e^{\alpha + e^{- \alpha}}}{2} \) </p></p>
 
                         <p>Formuae for both regular and hyperbolic trigonometric functions are shown below.
                             <math display="block">

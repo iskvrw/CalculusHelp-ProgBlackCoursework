@@ -8,6 +8,10 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         <script src="client.js" defer></script>
         <script src="logout.js" defer></script>
+        <script src="../postComment.js"></script>
+        <script src="../deleteComment.js"></script>
+        <script src="../editComment.js"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     </head>
     
     <body>
@@ -16,8 +20,8 @@
                 <div class="col"><a class="nav-button" href="about.html">About</a></div>
                 <div class="col"><a class="nav-button" href="help.html">Help</a></div>
                 <div class="col col-10"><a class="nav-button" href="index.html"><h2>Calculus Club</h2></a></div>
-                <div class="col"><a class="nav-button" href="register.html">Register</a></div>
-                <div class="col"><a class="nav-button" href="login.html">Login</a></div>
+                <div class="col"><a class="nav-button" href="register.html" id="register_button">Register</a></div>
+                <div class="col"><a class="nav-button" href="login.html" id="login_button">Login</a></div>
             </div>
         </div>
 
@@ -55,247 +59,26 @@
                     <div>
                         <h5>Partial Derivatives</h5>
                         <p>For a function with more  than one input, you must choose one of those inputs to differentiate with respect to, meaning that you can only "partially" differentiate for a multivariate function.</p>
-                        <p>For a function
-                            <math>
-                                <mi>f</mi>(
-                                <mi>x</mi>,
-                                <mi>y</mi>)
-                            </math>,
-                        The partial derivative with respect to x at a point 
-                        <math>
-                            (
-                                <msub>
-                                    <mi>x</mi>
-                                    <mn>0</mn>
-                                </msub>,
-                                <msub>
-                                    <mi>y</mi>
-                                    <mn>0</mn>
-                                </msub>
-                            )
-                        </math> is:
-                            <math display="block">
-                                <mfrac>
-                                    <mrow>
-                                        <mi>&#x2202</mi>
-                                        <mi>f</mi>
-                                    </mrow>
-                                    <mrow>
-                                        <mi>&#x2202</mi>
-                                        <mi>x</mi>
-                                    </mrow>
-                                </mfrac>
-                                (<msub>
-                                    <mi>x</mi>
-                                    <mn>0</mn>
-                                </msub>,
-                                <msub>
-                                    <mi>y</mi>
-                                    <mn>0</mn>
-                                </msub>)
-                                <mo>=</mo>
-                                <munder>
-                                    <mrow>lim</mrow>
-                                    <mrow>
-                                        <mi>x</mi>
-                                        <mo>→</mo>
-                                        <msub>
-                                            <mi>x</mi>
-                                            <mn>0</mn>
-                                        </msub>
-                                    </mrow>
-                                </munder>
-                                <mfrac>
-                                    <mrow>
-                                        <mi>f</mi>
-                                        (<mi>x</mi>,
-                                        <msub>
-                                            <mi>y</mi>
-                                            <mn>0</mn>
-                                        </msub>)
-                                        <mo>-</mo>
-                                        <mi>f</mi>
-                                        (<msub>
-                                            <mi>x</mi>
-                                            <mn>0</mn>
-                                        </msub>,
-                                        <msub>
-                                            <mi>y</mi>
-                                            <mn>0</mn>
-                                        </msub>)
-                                    </mrow>
-                                    <mrow>
-                                        <mi>x</mi>
-                                        <mo>-</mo>
-                                        <msub>
-                                            <mi>x</mi>
-                                            <mn>0</mn>
-                                        </msub>
-                                    </mrow>
-                                </mfrac>
-                            </math>
-                        </p>
+                        <p>For a function \(f(x,y) \), \((x_0,y_0) \)
+                        The partial derivative with respect to x at a point is: </p>
+                        <p class="text-center"> \(\frac{\partial f}{\partial x} (x_0,y_0) = \lim_{x \to x_0} \frac{f(x,y_0) - f(x_0,y_0)}{x-x_0} \) </p>
                     </div>
 
                     <div>
                         <h5>Example</h5>
-                        <p> Given 
-                            <math>
-                                <mi>f</mi>(
-                                <mi>x</mi>,
-                                <mi>y</mi>)
-                                <mo>=</mo>
-                                <mn>2</mn>
-                                <msup>
-                                    <mi>x</mi>
-                                    <mn>2</mn>
-                                </msup>
-                                <msup>
-                                    <mi>y</mi>
-                                    <mn>3</mn>
-                                </msup>
-                                <mo>-</mo>
-                                <mi>x</mi>
-                                <mi>y</mi>
-                                <mo>+</mo>
-                                <mn>2</mn>
-                                <mi>x</mi>
-                                <mo>-</mo>
-                                <mn>3</mn>
-                                <mi>y</mi>
-                                <mo>+</mo>
-                                <mn>5</mn>
-                            </math>,
-                            The partial derivative of <math><mi>f</mi></math> wrt to <math><mi>y</mi></math> is:
-                            <math display="block">
-                                <mfrac>
-                                    <mrow>
-                                        <mi>&#x2202</mi>
-                                        <mi>f</mi>
-                                    </mrow>
-                                    <mrow>
-                                        <mi>&#x2202</mi>
-                                        <mi>x</mi>
-                                    </mrow>
-                                </mfrac>
-                                <mo>=</mo>
-                                <mn>6</mn>
-                                <mi>x</mi>
-                                <msup>
-                                    <mi>y</mi>
-                                    <mi>2</mi>
-                                </msup>
-                                <mo>-</mo>
-                                <mi>x</mi>
-                                <mo>-</mo>
-                                <mn>3</mn>
-                            </math>
-                        </p>
+                        <p> Given \(f(x,y)= 2x^2y^3 - xy + 2x - 3y + 5\), the partial derivative of \(f \) wrt to \(x \) is \(\frac{\partial f}{\partial y} = 6xy^2 - x - 3 \) </p>
                     </div>
 
                     <div>
                         <h5>Alternative Notation</h5>
-                        <p>You may also see 
-                            <math>
-                                <msub>
-                                    <mi>f</mi>
-                                    <mi>x</mi>
-                                </msub>
-                            </math> used when referring to partial derivatives, such as
-                            <math>
-                                <mfrac>
-                                    <mrow>
-                                        <mi>&#x2202</mi>
-                                        <mi>f</mi>
-                                    </mrow>
-                                    <mrow>
-                                        <mi>&#x2202</mi>
-                                        <mi>x</mi>
-                                    </mrow>
-                                </mfrac>
-                            </math>.
-                        </p>
+                        <p>You may also see \(f_x \) used when referring to partial derivatives, such as \(\frac{\partial f}{\partial x} \).</p>
                     </div>
 
                     <div>
                         <h5>Directional Derivatives</h5>
-                        <p>Consider a point
-                            <math>
-                                <msub>
-                                    <mi mathvariant="bold">x</mi>
-                                    <mn mathvariant="bold">0</mn>
-                                </msub>
-                                <mo>=</mo>(
-                                    <msub>
-                                        <mi>x</mi>
-                                        <mn>0</mn>
-                                    </msub>,
-                                    <msub>
-                                        <mi>y</mi>
-                                        <mn>0</mn>
-                                    </msub>)
-                            </math>
-                            and a vector
-                            <math>
-                                <mi mathvariant="bold">v</mi>
-                                <mo>=</mo>
-                                <mrow>
-                                    <mo>(</mo>
-                                    <mtable>
-                                        <mtr>
-                                            <msub>
-                                                <mi>v</mi>
-                                                <mn>x</mn>
-                                            </msub>
-                                        </mtr>
-                                        <mtr>
-                                            <msub>
-                                                <mi>v</mi>
-                                                <mn>y</mn>
-                                            </msub>
-                                        </mtr>
-                                    </mtable>
-                                    <mo>)</mo>
-                                </mrow>
-                            </math>.
-                            Then, the directional derivative of <math><mi>f</mi></math> in direction <math><mi mathvariant="bold">v</mi></math> is:
-                            <math display="block">
-                                <msub>
-                                <mi>&#x2207</mi>
-                                <mi>v</mi>
-                                </msub>
-                                <mi>f</mi>
-                                <mo>=</mo>
-                                <mi mathvariant="bold">v</mi>
-                                <mo>.</mo>
-                                <mrow>
-                                <mo>(</mo>
-                                    <mtable>
-                                        <mtr>
-                                            <msub>
-                                                <mi>f</mi>
-                                                <mn>x</mn>
-                                            </msub>
-                                        </mtr>
-                                        <mtr>
-                                            <msub>
-                                                <mi>f</mi>
-                                                <mn>y</mn>
-                                            </msub>
-                                        </mtr>
-                                    </mtable>
-                                <mo>)</mo>
-                                </mrow>
-                            </math>
-                        </p>
-                        <p>
-                            The symbol
-                            <math>
-                                <mi>&#x2207</mi>
-                                <mi>f</mi>
-                            </math>
-                            is a vector pointing in the direction of greatest rate of increase of <math><mi>f</mi></math>.
-                        </p>
+                        <p>Consider a point \(\boldsymbol{x_0}  = (x_0, y_0) \) and a vector \(\boldsymbol{v} = (v_x, v_y)^T \). Then, the directional derivative of \(f \) in direction \(\boldsymbol{v} \) is: </p>
+                            <p class="text-center">\(\nabla_v f = \boldsymbol{v} . (f_x, f_y)^T \) </p>
+                        <p>The symbol \(\nabla f \) is a vector pointing in the direction of greatest rate of increase of \(f \).</p>
                     </div>
                 </div>
 
